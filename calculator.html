@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            max-width: 600px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px 28.7px;
+        }
+
+        input {
+            height: 40px;
+            width: 248px;
+            background: black;
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+    <script>
+        const handleInput = (e) => {
+
+            let inputValue = document.getElementById('cal');
+            inputValue.value += e.value;
+
+        }
+        var result = () => {
+            let inputValue = document.getElementById('cal');
+            if (inputValue.value != "") {
+                total = eval(inputValue.value);
+                inputValue.value = total;
+            }
+
+        }
+
+        const clearText=()=>{
+            let inputValue = document.getElementById('cal');
+            inputValue.value="";
+  
+        }
+
+    </script>
+    <section>
+        <div class="container">
+            <div class="calculator">
+                <input type="text" value="" disabled id="cal">
+                <table>
+                    <tr>
+                        <td>
+                            <button value="1" onclick="handleInput(this)">1</button>
+
+                        </td>
+                        <td>
+                            <button value="2" onclick="handleInput(this)">2</button>
+                        </td>
+                        <td>
+                            <button value="3" onclick="handleInput(this)">3</button>
+
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <button value="4" onclick="handleInput(this)">4</button>
+
+                        </td>
+                        <td>
+                            <button value="5" onclick="handleInput(this)">5</button>
+                        </td>
+                        <td>
+                            <button value="6" onclick="handleInput(this)">6</button>
+
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <button value="7" onclick="handleInput(this)">7</button>
+                        </td>
+                        <td>
+                            <button value="8" onclick="handleInput(this)">8</button>
+
+                        </td>
+                        <td>
+                            <button value="9" onclick="handleInput(this)">9</button>
+
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button value="0" onclick="handleInput(this)">0</button>
+
+                        </td>
+                        <td>
+                            <button onclick="result()">res</button>
+                        </td>
+                        <td>
+                            <button value="/" onclick="handleInput(this)">/</button>
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button value="+" onclick="handleInput(this)">+</button>
+
+                        </td>
+                        <td>
+                            <button value="-" onclick="handleInput(this)">-</button>
+                        </td>
+                        <td>
+                            <button value="*" onclick="handleInput(this)">*</button>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center">
+                            <button id="cut" onclick="clearText()">C</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
